@@ -10,16 +10,10 @@ for ($i = 0; $i < count($v); $i++) {
  }
     echo $suma;
   */  
-/*
- 
-while ($i = 0; $i < count($v); $i++) {
 
-   // $suma = $suma + $v[$i];
- //}
- //echo $suma;
-*/
+
 /*
- $x = 0;
+ $i = 0;
 
 while($i < count($v)) {
     $suma = $suma + $v[$i];
@@ -27,13 +21,14 @@ while($i < count($v)) {
 }
 
 echo $suma;
-
 */
 
-foreach ($v as $value) {
-    echo "$value <br>";
-}
 
+foreach ($v as $p) {
+
+  $suma = $suma + $p;
+  }
+echo $suma;
 
 
 
