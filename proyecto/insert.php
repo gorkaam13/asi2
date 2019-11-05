@@ -16,8 +16,8 @@ $news = $_GET['news'];
 $imag= $_GET['imag'];
 
 
-$sql = "INSERT INTO users (news, imag)
-VALUES ('$news', '$imag')";
+$sql = "INSERT INTO blog ( tit,news, imag)
+VALUES ('$tit','$news', '$imag')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";

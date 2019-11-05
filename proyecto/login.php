@@ -23,7 +23,7 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     if ($user == $row["user"]){
         if (password_verify($password, $row["pass"])) {
-            
+            echo "ok";
         } else{
             echo "KO";
         }
