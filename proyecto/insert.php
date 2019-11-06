@@ -13,11 +13,11 @@ if ($conn->connect_error) {
 
 $tit = $_GET['tit'];
 $news = $_GET['news'];
-$imag= $_GET['imag'];
+$imag= $_GET['img'];
 
 
-$sql = "INSERT INTO blog ( tit,news, imag)
-VALUES ('$tit','$news', '$imag')";
+$sql = "INSERT INTO blog ( tit,news, img)
+VALUES ('$tit','$news', '$img')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
