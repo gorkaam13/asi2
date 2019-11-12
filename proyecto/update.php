@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "password";
 $dbname = "proyecto";
 
 // Create connection
@@ -10,20 +10,13 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
+$Id = $_GET['Id']
 $tit = $_GET['tit'];
 $news = $_GET['news'];
 $imag= $_GET['img'];
 
+$sql = "UPDATE blog SET tit='$tit', news='$news', img='$imag' WHERE id=$Id";
 
-$sql = "INSERT INTO blog ( tit,news, img)
-VALUES ('$tit','$news', '$imag')";
 
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
 
 $conn->close();
-header("Location: editor.html");

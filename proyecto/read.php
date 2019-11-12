@@ -10,6 +10,12 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 //
+?>
+<div id="center_button">
+    <h1>noticias mañaneras</h1>
+
+<button onclick="location.href='formulario.html'">editar</button></div>
+<?php
 $sql = "SELECT * FROM blog";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
@@ -22,4 +28,3 @@ if ($result->num_rows > 0) {
 }
 $conn->close();
 ?>
-<div id="center_button"><button onclick="location.href='formulario.html'">editar</button></div>
