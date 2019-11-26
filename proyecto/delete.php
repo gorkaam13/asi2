@@ -13,4 +13,4 @@ if ($conn->connect_error) {
 $id = $_GET['Id'];
 $sql = "DELETE FROM blog WHERE id=$id";
 $result = $conn->query($sql);
-header("Location: editor.html");
+header("Location: editor.php");

@@ -23,7 +23,7 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     if ($user == $row["user"]){
         if ($password == $row["pass"]) {
-            header("Location: editor.html");
+            header("Location: editor.php");
         } else{
             echo "KO";
         }

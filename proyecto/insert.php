@@ -26,4 +26,4 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-header("Location: editor.html");
+header("Location: editor.php");
