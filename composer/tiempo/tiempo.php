@@ -35,7 +35,10 @@ if ($result->num_rows > 0) {
     echo "0 results";
 }
 
-
+$lluvia="lluvia.png";
+$nublado = "nublado.png";
+$despejado = "despejado.png";
+$tormenta="tormenta.png";
 
 
 
@@ -46,6 +49,31 @@ $forecast = (new DarkSkyApi('48bd63abc2c41657a0d72af7845d5889'))
     ->language('es')
     ->forecast();
 
-    echo $forecast->currently()->summary();
+$tiempo = $forecast->currently()->summary();
+echo $tiempo;
+if( $tiempo == 'Nublado'){
+    echo "<img src=$nublado>";
+} else if ($tiempo == 'Despejado') {
+    echo "<img src=$despejado >";
+} else if ($tiempo == 'Tormenta') {
+    echo "<img src=$tormenta>";
+} else if($tiempo == 'Lluvia') {
+    echo "<img src=$lluvia>";
+}else if ($tiempo == 'Mayormente Nublado') {
+    echo "<img src=$nublado>";
+}
+/*else if ($tiempo == '') {
+    echo "<img src=$>";
+}*/ else {
+    echo "¿que clima tienes?";
+}
 
+?>
 
+<html>
+<body>
+<form method="get" action="capital.html">
+    <button type="submit">inicio</button>
+</form>
+</body>
+</html>
