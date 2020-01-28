@@ -1,6 +1,12 @@
 <?php
+session_start();
+if (!isset($_SESSION['user'])) {   
+    header('Location: '."login.html");
+}
+
+
 $servername = "localhost";
-$username = "root";
+$username = "proyecto";
 $password = "";
 $dbname = "proyecto";
 // Create connection

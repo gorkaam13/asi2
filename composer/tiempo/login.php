@@ -22,7 +22,9 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     if ($user == $row["user"]){
-        if ($password == $row["pass"]) {
+        if (password_verify($password, $row["pass"])) {
+            session_start();
+            $_SESSION['user'] = $user;
             header("Location: editor.php");
         } else{
             echo "KO";

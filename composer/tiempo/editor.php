@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['user'])) {   
+    header('Location: '."login.html");
+}
+
+
 $servername = "localhost";
 $username = "proyecto";
 $password = "";
@@ -14,8 +20,7 @@ if ($conn->connect_error) {
 <html>
 
 <body>
-<button onclick="location.href='read.php'">leer</button></div>
-    <hr>   
+ <h1>crear ubicacion</h1>
     <form action="insert.php" method="GET">
      capital:<br>
     <input type="text" name="capital" value=""><br>
@@ -37,33 +42,32 @@ $result = $conn->query($sql2);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "capital: " . $row["capital"]. 
+       /* echo "capital: " . $row["capital"]. 
         "<br> latitud: " . $row["latitud"]. 
-        "<br> longitud:" . $row["longitud"].
-         ;
+        "<br> longitud:" . $row["longitud"];*/
         ?>
         <html>
            <body>
+           <h3>modificar ubicacion</h3>
 <form action="delete.php" method="GET">
-        ID:<br>
+        capital:<br>
        <input type="text" name="capital" value="<?php echo $row["capital"] ?>"><br>
        <input type="submit" value="borrar">
        </form>
       
-
+       <h3>borrar cordenadas</h3>
        <form action="update.php" method="GET">
-    capital:<br>
-    <input type="text" name="capital" value="<?php echo $row["capital"] ?>"><br>
+    
     latitud:<br>
     <input type="text" name="latitud" value="<?php echo $row["latitud"] ?>"><br>
     longitud:<br>
     <input type="text" name="longitud" value="<?php echo $row["longitud"] ?>"><br><br>
     
-    <br><br>
+    
     <input type="submit" value="modificar">
     </form>
 
- <br><hr>
+ <hr>
 
 
 

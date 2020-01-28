@@ -1,8 +1,15 @@
 <?php
+session_start();
+if (!isset($_SESSION['user'])) {   
+    header('Location: '."login.html");
+}
+
+
+
 $servername = "localhost";
-$username = "root";
+$username = "proyecto";
 $password = "";
-$dbname = "login";
+$dbname = "proyecto";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -29,3 +36,4 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
+header("Location: login.html");
