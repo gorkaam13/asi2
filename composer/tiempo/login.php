@@ -25,7 +25,7 @@ if ($result->num_rows > 0) {
         if (password_verify($password, $row["pass"])) {
             session_start();
             $_SESSION['user'] = $user;
-            header("Location: editor.php");
+            header("Location: capital.html");
         } else{
             echo "KO";
         }

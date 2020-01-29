@@ -30,5 +30,5 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-header("Location: login.html");
+header("Location: capital.html");
 ?>
