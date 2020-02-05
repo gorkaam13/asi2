@@ -27,12 +27,12 @@ if ($result->num_rows > 0) {
             $_SESSION['user'] = $user;
             header("Location: capital.html");
         } else{
-            echo "KO";
+           header('Location: '."login.html");;
         }
     } else {
-        echo "KO";
+        header('Location: '."login.html");
     }
 } else {
-    echo "KO";
+    header('Location: '."login.html");
 }
 $conn->close();
