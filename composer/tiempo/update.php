@@ -23,7 +23,7 @@ $longitud = $_GET['longitud'];
 
 $sql = "UPDATE capitales 
 SET latitud='$latitud', longitud='$longitud' 
-WHERE capital=$capital";
+WHERE capital = '$capital'";
 //echo $sql;
 if ($conn->query($sql) === TRUE) {
     echo "Record updated successfully";

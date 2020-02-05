@@ -17,6 +17,8 @@ if ($conn->connect_error) {
 }
 //
 $capital = $_GET['capital'];
-$sql = "DELETE FROM capitales WHERE capital = $capital";
+$sql = "DELETE FROM capitales WHERE capital = '$capital'";
 $result = $conn->query($sql);
+//echo $sql;
 header("Location: editor.php");
+

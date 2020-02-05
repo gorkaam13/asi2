@@ -93,8 +93,10 @@ if ($result->num_rows > 0) {
       
        <h3>modificar cordenadas</h3>
       <form action="update.php" method="GET">
+      
       capital:<br>
       <input type="text" name="capital" value="<?php echo $row["capital"] ?>"><br>
+      
     latitud:<br>
     <input type="text" name="latitud" value="<?php echo $row["latitud"] ?>"><br>
     longitud:<br>

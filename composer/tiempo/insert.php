@@ -17,7 +17,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$capital = $_GET['longitud'];
+$capital = $_GET['capital'];
 $latitud = $_GET['latitud'];
 $longitud= $_GET['longitud'];
 
